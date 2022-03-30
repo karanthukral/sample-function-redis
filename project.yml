@@ -1,0 +1,8 @@
+packages:
+  - name: default
+    actions:
+      - name: "hello"
+        runtime: 'go:default'
+        web: false
+        environment:
+          REDIS_URL: "${REDIS_URL}"

@@ -1,0 +1,18 @@
+databases:
+- cluster_name: REDIS_NAME
+  engine: REDIS
+  name: redis
+  production: true
+functions:
+- envs:
+  - key: REDIS_URL
+    value: ${redis.DATABASE_URL}
+  github:
+    branch: main
+    deploy_on_push: true
+    repo: karanthukral/sample-function-redis
+  name: sample-function-redis
+  routes:
+  - path: /
+  source_dir: /
+name: sample-function-redis
